@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div class="form-content">
-    <h3>CV Generator</h3>
-    <p>Complete the form to generate your CV</p>
+    <div class="formContent">
+        <h3>CV Generator</h3>
+        <p>Complete the form to generate your CV</p>
 
-    <form>
+        <form>
 
-        <h4>Personal Information</h4>
-        <input class="form-control" type="text" placeholder="Full Name" required>
-        <input class="form-control" type="email" placeholder="Email Address" required>
-        <input class="form-control" type="text" placeholder="Phone Number">
-        <input class="form-control" type="text" placeholder="City, Country">
+            <h4>Personal Information</h4>
+            <input class="formControl" type="text" name="name" placeholder="Full Name" required maxlength="30">
+            <input class="formControl" type="email" name="email" placeholder="Email Address" required maxlength="30">
+            <input class="formControl" type="text" name="pNum" placeholder="Phone Number" maxlength="30">
+            <input class="formControl" type="text" name="location" placeholder="City, Country" maxlength="30">
 
-        <h4>Work Experience</h4>
-        <input class="form-control" type="text" placeholder="Job Title">
-        <input class="form-control" type="text" placeholder="Company Name">
-        <textarea class="form-control" rows="4" placeholder="Job Description"></textarea>
+            <h4>Work Experience</h4>
+            <input class="formControl" type="text" name="job" placeholder="Job Title" maxlength="30">
+            <input class="formControl" type="text" name="comName" placeholder="Company Name" maxlength="30">
+            <textarea class="formControl" rows="4" name="description" placeholder="Job Description" maxlength="300"></textarea>
 
-        <h4>Education</h4>
-        <input class="form-control" type="text" placeholder="Degree">
-        <input class="form-control" type="text" placeholder="Institution">
-        <input class="form-control" type="text" placeholder="Year of Completion">
+            <h4>Education</h4>
+            <input class="formControl" type="text" name="degree" placeholder="Degree" maxlength="30">
+            <input class="formControl" type="text" name="institution" placeholder="Institution" maxlength="30">
+            <input class="formControl" type="text" name="completionYear" placeholder="Year of Completion" maxlength="30">
 
-        <h4>Skills</h4>
-        <textarea class="form-control" rows="3" placeholder="List your skills"></textarea>
+            <h4>Skills</h4>
+            <textarea class="formControl" rows="3" name="skills" placeholder="List your skills" maxlength="300"></textarea>
 
-        <h4>Languages</h4>
-        <input class="form-control" type="text" placeholder="Language - Level">
+            <h4>Languages</h4>
+            <input class="formControl" type="text" name="language" placeholder="Language - Level" maxlength="60">
 
-        <button type="submit" class="btn-primary">Generate CV</button>
-
-    </form>
-</div>
+            <button type="submit" class="btnGenerate">Generate CV</button>
+            <button type="reset" class="btnClear">Clear</button>
+        </form>
+    </div>
 
 </body>
+
 </html>

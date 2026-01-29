@@ -14,7 +14,7 @@ body {
     align-items: center;
 }
 
-.form-content {
+.formContent {
     background: #ffffff;
     padding: 40px;
     width: 100%;
@@ -44,7 +44,7 @@ h4 {
     color: #1e293b;
 }
 
-.form-control {
+.formControl {
     width: 100%;
     padding: 12px 14px;
     margin-top: 12px;
@@ -52,16 +52,16 @@ h4 {
     border: 1px solid #cbd5e1;
     font-size: 14px;
     resize: none;
-    transition: border .3s, box-shadow .3s;
+    transition: border 0.5s, box-shadow 0.5s;
 }
 
-.form-control:focus {
+.formControl:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+    border-color: #05d628;
+    box-shadow: 0 0 0 2px rgba(37,99,235,.15);
 }
 
-.btn-primary {
+.btnGenerate {
     width: 100%;
     margin-top: 35px;
     padding: 12px;
@@ -72,10 +72,29 @@ h4 {
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    transition: background .3s, transform .2s;
+    transition: background .2s, transform .1s;
 }
 
-.btn-primary:hover {
+.btnGenerate:hover {
     background: #1e40af;
-    transform: translateY(-1px);
+    transform: translateY(-4px);
+}
+
+.btnClear {
+    width: 100%;
+    margin-top: 35px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff004c;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+}
+
+.btnClear:hover {
+    background: #aa031f;
+    transform: translateY(2px);
 }
