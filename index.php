@@ -23,7 +23,7 @@
             <input class="formControl" type="text" name="location" placeholder="City, Country" maxlength="30">
 
             <h4>Work Experience</h4>
-            <input class="formControl" type="text" name="job" placeholder="Job Title" maxlength="30">
+            <input class="formControl" type="text" name="job" placeholder="Job Title" maxlength="80">
             <input class="formControl" type="text" name="comName" placeholder="Company Name" maxlength="30">
             <textarea class="formControl" rows="4" name="description" placeholder="Job Description" maxlength="300"></textarea>
 
