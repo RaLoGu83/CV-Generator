@@ -32,6 +32,7 @@ if (!$data) {
 <!-- Estructura HTML para mostrar el CV con el mismo styles.css-->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Your Curriculum Vitae</title>
@@ -40,41 +41,47 @@ if (!$data) {
 
 <body>
 
-<div class="formContent">
+    <div class="formContent">
 
-    <h2><?= htmlspecialchars($data['name']) ?></h2>
+        <h2><?= htmlspecialchars($data['name']) ?></h2>
 
-    <p>
-        <?= htmlspecialchars($data['email']) ?> |
-        <?= htmlspecialchars($data['phone']) ?> |
-        <?= htmlspecialchars($data['location']) ?>
-    </p>
+        <p>
+            <?= htmlspecialchars($data['email']) ?> |
+            <?= htmlspecialchars($data['phone']) ?> |
+            <?= htmlspecialchars($data['location']) ?>
+        </p>
 
-    <h3>Work Experience</h3>
-    <b>
-        <?= htmlspecialchars($data['job']) ?> -
-        <?= htmlspecialchars($data['company']) ?>
-    </b>
-    <!-- nl2br respeta los saltos de línea (Línea <br> línea...) -->
-    <p><?= nl2br(htmlspecialchars($data['description'])) ?></p> 
-
-
-    <h3>Education</h3>
-    <p>
-        <?= htmlspecialchars($data['degree']) ?> -
-        <?= htmlspecialchars($data['institution']) ?>
-        (<?= htmlspecialchars($data['year']) ?>)
-    </p>
+        <h3>Work Experience</h3>
+        <b>
+            <?= htmlspecialchars($data['job']) ?> -
+            <?= htmlspecialchars($data['company']) ?>
+        </b>
+        <!-- nl2br respeta los saltos de línea (Línea <br> línea...) -->
+        <p><?= nl2br(htmlspecialchars($data['description'])) ?></p>
 
 
-    <h3>Skills</h3>
-    <p><?= nl2br(htmlspecialchars($data['skills'])) ?></p>
+        <h3>Education</h3>
+        <p>
+            <?= htmlspecialchars($data['degree']) ?> -
+            <?= htmlspecialchars($data['institution']) ?>
+            (<?= htmlspecialchars($data['year']) ?>)
+        </p>
 
 
-    <h3>Languages</h3>
-    <p><?= htmlspecialchars($data['language']) ?></p>
+        <h3>Skills</h3>
+        <p><?= nl2br(htmlspecialchars($data['skills'])) ?></p>
 
-</div>
+
+        <h3>Languages</h3>
+        <p><?= htmlspecialchars($data['language']) ?></p>
+
+
+        <a href="index.php" class="btnList">Create a new CV</a>
+
+        <a href="table.php" class="btnList">View created CVs</a>
+
+    </div>
 
 </body>
+
 </html>

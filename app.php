@@ -26,36 +26,75 @@ $completionYear = htmlspecialchars($_POST['completionYear']);
 $skills = htmlspecialchars($_POST['skills']);
 $language = htmlspecialchars($_POST['language']);
 
+// Se comprueba que tenga ID para saber si usar update para editar o insert para crear en la bbdd
+$id = $_POST['id'] ?? null;
+
 // plantilla de preparación de la consulta SQL
-$sql = "INSERT INTO cvs
-(name,email,phone,location,job,company,description,degree,institution,year,skills,language)
-VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"; // Las "?" reservan los huecos de los valores
+if ($id) {
 
-if ($stmt = $conn->prepare($sql)) {
+    $sql = "UPDATE cvs SET
+    name=?,email=?,phone=?,location=?,job=?,company=?,description=?,degree=?,institution=?,year=?,skills=?,language=?
+    WHERE id=?";
 
-    // 12 strings son 12 "s", si fueran int seria "i" y si fuera double seria "d"
-    $stmt->bind_param(
-        "ssssssssssss",
-        $name,
-        $email,
-        $pNum,
-        $location,
-        $job,
-        $comName,
-        $description,
-        $degree,
-        $institution,
-        $completionYear,
-        $skills,
-        $language
-    );
+    if ($stmt = $conn->prepare($sql)) {
 
-    $stmt->execute();
-    $lastId = $stmt->insert_id;
-    $stmt->close();
+        $stmt->bind_param(
+            "ssssssssssssi",
+            $name,
+            $email,
+            $pNum,
+            $location,
+            $job,
+            $comName,
+            $description,
+            $degree,
+            $institution,
+            $completionYear,
+            $skills,
+            $language,
+            $id
+        );
+
+        $stmt->execute();
+        $lastId = $id;
+        $stmt->close();
+
+    } else {
+        echo "Error: " . $conn->error;
+    }
 
 } else {
-    echo "Error: " . $conn->error;
+
+    $sql = "INSERT INTO cvs
+    (name,email,phone,location,job,company,description,degree,institution,year,skills,language)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"; // Las "?" reservan los huecos de los valores
+
+    if ($stmt = $conn->prepare($sql)) {
+
+        // 12 strings son 12 "s", si fueran int seria "i" y si fuera double seria "d"
+        $stmt->bind_param(
+            "ssssssssssss",
+            $name,
+            $email,
+            $pNum,
+            $location,
+            $job,
+            $comName,
+            $description,
+            $degree,
+            $institution,
+            $completionYear,
+            $skills,
+            $language
+        );
+
+        $stmt->execute();
+        $lastId = $stmt->insert_id;
+        $stmt->close();
+
+    } else {
+        echo "Error: " . $conn->error;
+    }
 }
 
 // Una vez guardado los datos en la tabla, se cierra la conexión

@@ -40,6 +40,8 @@
 
             <button type="submit" class="btnGenerate">Generate CV</button>
             <button type="reset" class="btnClear">Clear</button>
+            <a href="table.php" class="btnList">View created CVs</a>
+
         </form>
     </div>
 
