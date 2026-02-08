@@ -80,7 +80,14 @@ if (!$data) {
 
         <a href="table.php" class="btnList">View created CVs</a>
 
+        <button onclick="downloadPDF()" class="btnPDF">Descargar PDF</button>
+
     </div>
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
 
 </body>
 

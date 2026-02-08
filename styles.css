@@ -121,8 +121,16 @@ h4 {
     background: #f8fafc;
 }
 
+.btnView {
+    background: #0095eb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
 .btnEdit {
-    background: #22c55e;
+    background: #ac8400;
     color: white;
     padding: 6px 12px;
     border-radius: 6px;
@@ -149,4 +157,31 @@ h4 {
     color: white;
     text-decoration: none;
     font-weight: 500;
+}
+
+.btnPDF {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    background: #006aff;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Para imprimir el pdf */
+@media print {
+
+    body {
+        margin: 0;
+    }
+
+    .btnList {
+        display: none; /* Para ocultar los botones */
+    }
+
 }
