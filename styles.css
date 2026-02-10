@@ -184,4 +184,8 @@ h4 {
         display: none; /* Para ocultar los botones */
     }
 
+    .btnPDF {
+        display: none;
+    }
+
 }
