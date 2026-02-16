@@ -15,6 +15,6 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 
-header("Location: index.php");
+header("Location: table.php");
 exit();
 ?>

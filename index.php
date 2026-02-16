@@ -17,13 +17,13 @@
         <form action="app.php" method="POST">
 
             <h4>Personal Information</h4>
-            <input class="formControl" type="text" name="name" placeholder="Full Name" required minlength="2" maxlength="30">
+            <input class="formControl" type="text" name="name" placeholder="Full Name" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" required minlength="2" maxlength="30">
             <input class="formControl" type="email" name="email" placeholder="Email Address" required maxlength="30">
             <input class="formControl" type="text" name="pNum" placeholder="Phone Number" pattern="^\+?[0-9\s\-]{7,15}$" required maxlength="30">
-            <input class="formControl" type="text" name="location" placeholder="City, Country" required maxlength="30">
+            <input class="formControl" type="text" name="location" placeholder="City, Country" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" required maxlength="30">
 
             <h4>Work Experience</h4>
-            <input class="formControl" type="text" name="job" placeholder="Job Title" required maxlength="80">
+            <input class="formControl" type="text" name="job" placeholder="Job Title" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" required maxlength="80">
             <input class="formControl" type="text" name="comName" placeholder="Company Name" required maxlength="30">
             <textarea class="formControl" rows="4" name="description" placeholder="Job Description" required maxlength="300"></textarea>
 
