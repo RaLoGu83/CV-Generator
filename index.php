@@ -36,7 +36,7 @@
             <textarea class="formControl" rows="3" name="skills" placeholder="List your skills" required maxlength="300"></textarea>
 
             <h4>Languages</h4>
-            <textarea class="formControl" rows="4" type="text" name="language" placeholder="Language - Level" required maxlength="300">
+            <input class="formControl" type="text" name="language" placeholder="Language - Level" required maxlength="60">
 
             <button type="submit" class="btnGenerate">Generate CV</button>
             <button type="reset" class="btnClear">Clear</button>
