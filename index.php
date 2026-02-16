@@ -17,26 +17,26 @@
         <form action="app.php" method="POST">
 
             <h4>Personal Information</h4>
-            <input class="formControl" type="text" name="name" placeholder="Full Name" required maxlength="30">
+            <input class="formControl" type="text" name="name" placeholder="Full Name" required minlength="2" maxlength="30">
             <input class="formControl" type="email" name="email" placeholder="Email Address" required maxlength="30">
-            <input class="formControl" type="text" name="pNum" placeholder="Phone Number" maxlength="30">
-            <input class="formControl" type="text" name="location" placeholder="City, Country" maxlength="30">
+            <input class="formControl" type="text" name="pNum" placeholder="Phone Number" pattern="^\+?[0-9\s\-]{7,15}$" required maxlength="30">
+            <input class="formControl" type="text" name="location" placeholder="City, Country" required maxlength="30">
 
             <h4>Work Experience</h4>
-            <input class="formControl" type="text" name="job" placeholder="Job Title" maxlength="80">
-            <input class="formControl" type="text" name="comName" placeholder="Company Name" maxlength="30">
-            <textarea class="formControl" rows="4" name="description" placeholder="Job Description" maxlength="300"></textarea>
+            <input class="formControl" type="text" name="job" placeholder="Job Title" required maxlength="80">
+            <input class="formControl" type="text" name="comName" placeholder="Company Name" required maxlength="30">
+            <textarea class="formControl" rows="4" name="description" placeholder="Job Description" required maxlength="300"></textarea>
 
             <h4>Education</h4>
-            <input class="formControl" type="text" name="degree" placeholder="Degree" maxlength="30">
-            <input class="formControl" type="text" name="institution" placeholder="Institution" maxlength="30">
-            <input class="formControl" type="text" name="completionYear" placeholder="Year of Completion" maxlength="30">
+            <input class="formControl" type="text" name="degree" placeholder="Degree" required maxlength="30">
+            <input class="formControl" type="text" name="institution" placeholder="Institution" required maxlength="30">
+            <input class="formControl" type="text" name="completionYear" min="1900" max="2099"  placeholder="Year of Completion" required maxlength="30">
 
             <h4>Skills</h4>
-            <textarea class="formControl" rows="3" name="skills" placeholder="List your skills" maxlength="300"></textarea>
+            <textarea class="formControl" rows="3" name="skills" placeholder="List your skills" required maxlength="300"></textarea>
 
             <h4>Languages</h4>
-            <input class="formControl" type="text" name="language" placeholder="Language - Level" maxlength="60">
+            <textarea class="formControl" rows="4" type="text" name="language" placeholder="Language - Level" required maxlength="300">
 
             <button type="submit" class="btnGenerate">Generate CV</button>
             <button type="reset" class="btnClear">Clear</button>
