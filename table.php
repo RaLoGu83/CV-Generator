@@ -37,7 +37,7 @@ $result = $conn->query("SELECT id, name, created_at FROM cvs ORDER BY created_at
                 <td><?= $row['created_at'] ?></td>
                 <td>
                     <a href="cv.php?id=<?= $row['id'] ?>" class="btnView">View</a>
-                    <a href="index.php?edit=<?= $row['id'] ?>" class="btnEdit">Edit</a>
+                    <a href="edit.php?id=<?= $row['id'] ?>" class="btnEdit">Edit</a>
                     <a href="delete.php?id=<?= $row['id'] ?>" class="btnDelete"
                        onclick="return confirm('Delete this CV?')">Delete</a>
                 </td>
